@@ -59,11 +59,11 @@ public:
   getSendQueueLength() final;
 
 private:
-  virtual void
+  void
   doClose() override;
 
-  virtual void
-  doSend(Packet&& packet) override;
+  void
+  doSend(const Block& packet, const nfd::EndpointId& endpoint) final;
 
   void
   receiveFromSocket(Ptr<Socket> socket);
